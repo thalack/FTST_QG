@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my app</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <h1 id="display-area">ready?</h1>
+        <button id="main-button" onclick="shownewquestion()">start</button>
+    </div>
+
+    <script src="questions.js"></script>
+    <script>
+        function shownewquestion() {
+            const display = document.getElementById('display-area');
+            const btn = document.getElementById('main-button');
+            
+            // pick a random item from our list
+            const randomindex = Math.floor(Math.random() * questionbank.length);
+            const selected = questionbank[randomindex];
+            
+            // update the screen
+            display.innerText = selected.question;
+            btn.innerText = "show me another one";
+        }
+    </script>
+</body>
+</html>
